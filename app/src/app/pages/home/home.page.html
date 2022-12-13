@@ -1,0 +1,104 @@
+<ion-header> 
+  <ion-toolbar color="dark">
+    <ion-icon slot="start" name="menu" size="large" class="ion-padding" (click)="verMenu()"></ion-icon>
+    <ion-title>Home</ion-title>
+    <ion-text slot="end" class="ion-padding" (click)="cerrarSesion()">
+      <ion-icon class="salir" name="log-out"></ion-icon>
+    </ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <div style="margin:0 auto;">
+      <ion-card style="width:300px;">
+        
+  <ion-card-header class="ion-text-center">
+    <ion-card-title>Registro de asistencia</ion-card-title>
+    <ion-card-subtitle>Mucho más fácil con código qr</ion-card-subtitle>
+  </ion-card-header>
+  <ion-img style="width:300px;"src="assets/icon/codigoqr.png"></ion-img>
+  <ion-card-content>
+    El registro de asistencia ahora resulta mucho más fácil con esta aplicación,
+    ya que nuestro sistema permite el registro de esta fácilmente con código QR!
+  </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-item>
+
+
+
+
+  <ion-icon slot="start" name="menu" size="large" class="ion-padding" (click)="verMenu()"></ion-icon>
+  <ion-text class="ion-text-center">
+    <h1>Bienvenido!</h1>
+  </ion-text>
+  <ion-item class="ion-padding">
+    <div style="margin:0 auto;">
+      <ion-card style="width:300px;">
+        <ion-card-header>
+          <ion-text color="dark" class="ion-text-center">
+            <h4>Base de datos</h4>
+            <ion-img class="base" src="assets/icon/base.png" routerLink="/base"></ion-img>
+          </ion-text>
+        </ion-card-header> 
+        <ion-card-content>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-item>
+
+  <ion-item class="ion-padding">
+    <div style="margin:0 auto;">
+      <ion-card style="width:300px;">
+        <ion-card-header>
+          <ion-text color="dark" class="ion-text-center">
+            <h4>Inglés</h4>
+            <ion-img class="ingles" src="assets/icon/ingles.png" routerLink="/ingles"></ion-img>
+          </ion-text>
+        </ion-card-header> 
+        <ion-card-content>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-item>
+
+  <ion-item class="ion-padding">
+    <div style="margin:0 auto;">
+      <ion-card style="width:300px;">
+        <ion-card-header>
+          <ion-text color="dark" class="ion-text-center">
+            <h4>Programacion</h4>
+            <ion-img class="programacion" src="assets/icon/programacion.png"  routerLink="/program"></ion-img>
+          </ion-text>
+        </ion-card-header> 
+        <ion-card-content>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-item>
+
+  <ion-card style="width:350px;">
+    <ion-card-content>
+      <ion-text class="ion-text-center">
+        <h1>
+          Historial de Asistencia
+        </h1>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let registro of dataLocal.guardados" 
+              (click)="abrirRegistro(registro)"
+              detail>
+      <ion-icon slot="start" name="registro.icon"></ion-icon>
+        <ion-label>
+          <h2>{{ registro.text}}</h2>
+          <p>{{ registro.created | date: 'medium' }}</p>
+        </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+

@@ -1,0 +1,19 @@
+<ion-content>
+  <ion-icon class="salir" name="log-out" routerLink="/ingles"></ion-icon>
+  
+  <ion-slides [options]="swiperOpts">
+      <ion-slide>
+
+          <ion-button expand="full"
+                      fil="outline"
+                      size="large"
+                      shape="round"
+                      (click)="scan()"
+                      (click)="presentToast3()">
+              ScanQR
+          </ion-button>
+
+      </ion-slide>
+  </ion-slides>
+
+</ion-content>

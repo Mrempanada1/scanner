@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-icon slot="start" name="menu" size="large" class="ion-padding" (click)="verMenu()"></ion-icon>
+    <ion-title>Base de Datos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card style="width:350px;">
+    <ion-card-content>
+      <ion-text class="ion-text-center">
+        <h1>
+          Registrar Asistencia
+        </h1>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-icon class="boton" name="qr-code" color="success"  routerLink="/codigo"></ion-icon>
+  <ion-card style="width:350px;">
+    <ion-card-content>
+      <ion-text class="ion-text-center">
+        <h1>
+          Historial de Asistencia
+        </h1>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let registro of dataLocal.guardados" 
+              (click)="abrirRegistro(registro)"
+              detail>
+      <ion-icon slot="start" name="registro.icon"></ion-icon>
+        <ion-label>
+          <h2>{{ registro.text}}</h2>
+          <p>{{ registro.created | date: 'medium' }}</p>
+        </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
